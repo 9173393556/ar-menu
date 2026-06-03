@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Pizza Menu</title>
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<style>
+body{
+    margin:0;
+    background:#111;
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+.header{
+    text-align:center;
+    padding:15px;
+    background:linear-gradient(135deg,#ff6b35,#f7931e);
+}
+
+.header h1{
+    margin:0;
+    font-size:24px;
+}
+
+.header p{
+    margin-top:5px;
+    font-size:13px;
+}
+
+model-viewer{
+    width:100%;
+    height:70vh;
+    background:#111;
+}
+
+.info{
+    margin:10px;
+    padding:15px;
+    border-radius:15px;
+    background:#222;
+}
+
+.price{
+    color:#f7931e;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.btn{
+    background:#ff6b35;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:20px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>🍕 AR Pizza Menu</h1>
+    <p>AR Button દબાવી Pizza Table પર જુઓ</p>
+</div>
+
+<model-viewer
+    src="./pizza.glb"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    camera-controls
+    auto-rotate
+    shadow-intensity="1"
+    exposure="1"
+    alt="Pizza Model">
+
+    <button slot="ar-button"
+        style="
+        background:#ff6b35;
+        color:white;
+        border:none;
+        padding:12px 25px;
+        border-radius:25px;
+        font-size:16px;
+        position:absolute;
+        bottom:20px;
+        left:50%;
+        transform:translateX(-50%);
+        ">
+        📱 View In AR
+    </button>
+
+</model-viewer>
+
+<div class="info">
+    <h2>🍕 Margherita Pizza</h2>
+    <p>Fresh Mozzarella • Tomato Sauce • Basil</p>
+
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-top:15px;">
+        <span class="price">₹320</span>
+        <button class="btn">Order Now</button>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
